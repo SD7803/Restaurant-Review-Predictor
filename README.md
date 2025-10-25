@@ -29,34 +29,45 @@ To analyze restaurant data and develop a model that can **predict restaurant rat
 
 ### 🧩 Project Workflow
 
-#### 1️⃣ Data Understanding
+#### 1️. Data Understanding
 - Imported dataset using **Pandas**
 - Displayed general info (`.info()`, `.describe()`)
 - Checked for missing and duplicate values
 
-#### 2️⃣ Exploratory Data Analysis (EDA)
+#### 2️. Exploratory Data Analysis (EDA)
 - **City-wise Average Cost** — visualized using bar plots  
 - **Cuisine Votes** — analyzed which cuisines attract more customer votes  
 - **Pairplot Analysis** — explored relationships between cost, rating, and votes  
 - **Pie Charts** — distribution of online delivery availability and rating text categories  
 
-#### 3️⃣ Data Cleaning
+#### 3️. Data Cleaning
 - Removed “Not rated” entries  
 - Encoded categorical variables like `Has Table booking` and `Has Online delivery` using **LabelEncoder**
 
-#### 4️⃣ Feature Scaling
+#### 4️. Feature Scaling
 - Scaled numerical data using **StandardScaler** for uniformity
 
-#### 5️⃣ Model Building
+#### 5️. Model Building
 - Split data into **training** and **testing sets** using `train_test_split`
 - Implemented regression models (details can be found in the notebook)
 - Used `Aggregate rating` as the target variable (`y`)
 
-#### 6️⃣ Model Evaluation
+#### 6️. Model Evaluation
 - Evaluated performance using metrics like **R² Score**, **MAE**, and **RMSE**
 - Compared predicted and actual ratings
 
 ---
+#### 7. Streamlit Web App
+Built an interactive **Streamlit dashboard** where users can:
+- Input:
+  - Average Cost for Two  
+  - Price Range (1–4)  
+  - Online Delivery (Yes/No)  
+  - Table Booking (Yes/No)  
+- Get **predicted restaurant rating** as output.
+
+---
+
 
 ### 📊 Key Insights
 - Cities with higher average dining costs often received **better ratings**.  
@@ -72,15 +83,19 @@ To analyze restaurant data and develop a model that can **predict restaurant rat
 
 ---
 
-### 🚀 How to Run
+
+### 🚀 How to Run Locally
 
 ```bash
-# Clone the repository
-git clone https://github.com/<your-username>/restaurant-review-predictor.git
-cd restaurant-review-predictor
+# Clone this repository
+git clone https://github.com/<your-username>/restaurant-rating-predictor.git
+cd restaurant-rating-predictor
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Run the Streamlit app
+streamlit run app.py
 
 # Run the notebook
 jupyter notebook analysis.ipynb
